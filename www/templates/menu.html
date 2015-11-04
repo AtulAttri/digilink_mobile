@@ -1,0 +1,117 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content >
+    <ion-nav-bar align-title="center" class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+       <ion-nav-buttons side="right">
+           <button class='button icon ion-bag' ng-click='goToCart()'></button>
+       </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar align-title="center" class="bar-stable">
+      <h1 class="title" style="color: Black" >Digilink</h1>
+
+    </ion-header-bar>
+    <ion-content class="has-header">
+      <ion-list>
+          <ion-item menu-close href="#/app/landing">
+              Home
+          </ion-item>
+        <ion-item menu-close ng-click="login()">
+          Login
+        </ion-item>
+        <ion-item menu-close href="#/app/gallery">
+          Gallery
+        </ion-item>
+        <!--<ion-item menu-close href="#/app/browse">-->
+          <!--Fiber Solutions-->
+        <!--</ion-item>-->
+
+              <ion-item class="item-stable"
+                        ng-click="toggleGroup(fiber)"
+                        ng-class="{active: isGroupShown(fiber)}">
+                  <i class="icon" ng-class="isGroupShown(fiber) ? 'ion-minus' : 'ion-plus'"></i>
+                  &nbsp;
+                  Fiber Solution
+              </ion-item>
+              <ion-item   menu-close class="item-accordion"
+
+                        ng-show="isGroupShown(fiber)"  href="#/app/productsList">
+                  Adaptor
+              </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown(fiber)" href="#/app/productsList">
+              Cable
+          </ion-item>
+
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown(fiber)" href="#/app/productsList">
+              Connector
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown(fiber)" href="#/app/productsList">
+              Patch Cord
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown(fiber)" href="#/app/productsList">
+              Patch Panel
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown(fiber)" href="#/app/productsList">
+              Pigtail
+          </ion-item>
+
+          <!--<ion-item menu-close href="#/app/productsList">-->
+         <!--Copper Solutions-->
+        <!--</ion-item>-->
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup1(Copper)"
+                    ng-class="{active: isGroupShown1(Copper)}">
+              <i class="icon" ng-class="isGroupShown1(Copper) ? 'ion-minus' : 'ion-plus'"></i>
+              &nbsp;
+              Copper Solution
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown1(Copper)" href="#/app/productsList">
+              Cable
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown1(Copper)" href="#/app/productsList">
+              Modular Jack
+          </ion-item>
+
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown1(Copper)" href="#/app/productsList">
+              Patch Cord
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown1(Copper)" href="#/app/productsList">
+              Patch Panel
+          </ion-item>
+          <ion-item  menu-close class="item-accordion"
+
+                    ng-show="isGroupShown1(Copper)" href="#/app/productsList">
+            Tools
+          </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

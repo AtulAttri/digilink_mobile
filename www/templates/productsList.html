@@ -1,0 +1,45 @@
+<ion-view  view-title="Digilink Products">
+  <ion-content>
+    <ion-list>
+      <!--<ion-prod ng-repeat="prod in Products" href="#/app/playlists/{{playlist.id}}">-->
+          <!--<div style="margin-left: 60px">-->
+              <!--<div>-->
+
+          <!--<img src="{{prod.ImagePath}}" />-->
+                  <!--</div>-->
+
+            <!--<div>-->
+          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Category: </b>{{prod.Category}}</h5>-->
+          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Description : </b>{{prod.Description}}</h5>-->
+          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif"> prod : </b> {{prod.prod}}</h5>-->
+                <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif"> </b> {{prod.prod}}</h5>-->
+          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">prod Code :</b>{{prod.ProductCode}} </h5>-->
+            <!--</div>-->
+
+          <!--</div>-->
+      <!--</ion-prod>-->
+        <div class="list" collection-repeat="prod in ProductList | filter:filter">
+            <table   style="width: 100% ; border-bottom: 1px solid #666666;">
+                <tr  style="display: inline-block ; border-bottom: 1px solid #666666;width: 100% " >
+                    <td style="width: 50% ; padding-bottom: 15px ; padding-top : 10px !important;">
+                        <a  style="border-bottom: 1px solid #666666;!important;" ng-href="#/app/gallery">
+                            <img style='width: 110px; height: 130px' ng-src="{{prod.ImagePath}}">
+                        </a>
+                        <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif"></b>{{prod.Product}}</h5>-->
+                    </td>
+
+                    <td style="width: 50% ; padding-bottom: 10px ;  !important;">
+                        <a style="text-decoration: none !important;" ng-href="#/app/gallery" >
+                            <h5><b style="font-family:'Trebuchet MS', Sans-Serif">Name: </b>{{prod.Description}}</h5>
+                            <h5><b style="font-family:'Trebuchet MS', Sans-Serif">Code: </b>{{prod.ProductCode}}</h5>
+                            <h5><b style="font-family:'Trebuchet MS', Sans-Serif">Category: </b>{{prod.Category}}</h5>
+                            <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Sub Category  : </b>{{prod.Product}}</h5>-->
+
+                        </a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </ion-list>
+  </ion-content>
+</ion-view>
