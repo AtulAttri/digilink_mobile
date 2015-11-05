@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http, $q,$state,contactusService,$ionicLoading,$stateParams,Products,$ionicHistory) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http, $q,$state,contactusService,$ionicLoading,$stateParams,Products,$ionicHistory, $window,$rootScope) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -39,7 +39,12 @@ angular.module('starter.controllers', [])
             });
             alertPopup.then(function(res) {
                 console.log('Your Enquiry has been sent');
+               $window.location.reload();
+               // $rootScope.$destroy.prototype();
+
+
             });
+
         };
 
         $scope.toggleGroup = function(fiber) {
@@ -97,14 +102,21 @@ angular.module('starter.controllers', [])
 
             $timeout(function() {
                 $scope.after_enquiry_msg();
-//                $ionicViewService.clearHistory();
+          //  Products.destroy.valueOf();
+
+                $ionicHistory.clearCache();
+                $ionicHistory.clearHistory();
                 $ionicHistory.nextViewOptions({
                     disableAnimate: true,
                     disableBack: true
                 });
-                $state.go('app.landing');
-                $ionicLoading.hide();
+             //   Products.cartProducts= null;
 
+              // CartCtrl.cartProducts=null;
+                $state.go('app.landing');
+
+                $ionicLoading.hide();
+              //  $window.location.reload();
             }, 1000);
 
 //            contactusService.insertenquireinfo($http, $q, $scope.enquire ,$ionicLoading).then(function (data) {
@@ -125,16 +137,10 @@ angular.module('starter.controllers', [])
 })
 
     .factory("ProductList", function($firebaseArray) {
-//        $scope.loading = $ionicLoading.show({
-//            content: '<i class="icon ion-loading-c"></i>',
-//            animation: 'fade-in',
-//            showBackdrop: false,
-//            maxWidth: 50,
-//            showDelay: 0
-//        });
+
         var itemsRef = new Firebase("https://atulapp.firebaseio.com/");
         return $firebaseArray(itemsRef);
-     //   $ionicLoading.hide();
+
     })
 
     .controller("ProductsListCtrl", function($scope, ProductList,$ionicLoading,$timeout) {
@@ -151,17 +157,6 @@ angular.module('starter.controllers', [])
             $scope.ProductList = ProductList;
         }, 2000);
 
-  //  });
-//        $scope.ProductList = ProductList;
-//        $ionicLoading.hide();
-//        $scope.addItem = function() {
-//            var name = prompt("What do you need to buy?");
-//            if (name) {
-//                $scope.Products.$add({
-//                    "name": name
-//                });
-//            }
-//        };
         })
 .controller('GalleryCtrl', function($scope, Products,$ionicLoading,$timeout) {
         $scope.loading = $ionicLoading.show({
