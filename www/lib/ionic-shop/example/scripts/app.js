@@ -48,6 +48,6 @@ app.config(function($stateProvider, $urlRouterProvider) {
       controller: 'GalleryController'
     });
 
-    $urlRouterProvider.otherwise('checkout');
+    $urlRouterProvider.otherwise('gallery');
 
 });

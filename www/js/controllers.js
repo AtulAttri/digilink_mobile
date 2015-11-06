@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http, $q,$state,contactusService,$ionicLoading,$stateParams,Products,$ionicHistory, $window,$rootScope) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http, $q,$state,contactusService,$ionicLoading,$stateParams,Products,$ionicHistory, $window) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
   //});
         $scope.loginData = {"email_id": "", "password": "", "logindate": new Date(), "company": "digilink" };
         $scope.enquire=[];
-        $scope.enquire = {"name": "", "mobile_no": "", "create_ts": new Date(), "email": "", "enquire_from": "digilink","created_by": "","product_code":"","additional_remarks":"Enquiry From Digilink Mobile APP"}
+        $scope.enquire = {"name": "", "mobile_no": "", "create_ts": new Date(), "email": "", "enquire_from": "digilink","created_by": "","product_code":"","additional_remarks":"Enquiry From Digilink Mobile APP"};
 
   // Form data for the login modal
   $scope.loginData = {};
@@ -158,7 +158,7 @@ angular.module('starter.controllers', [])
         }, 2000);
 
         })
-.controller('GalleryCtrl', function($scope, Products,$ionicLoading,$timeout) {
+.controller('GalleryCtrl', function($scope, Products,$ionicLoading,$timeout,ProductList) {
         $scope.loading = $ionicLoading.show({
             content: '<i class="icon ion-loading-c"></i>',
             animation: 'fade-in',
@@ -171,6 +171,7 @@ angular.module('starter.controllers', [])
 
 
         $scope.products = Products.galleryProducts;
+           $scope.products = ProductList;
   $scope.products = [{
       title: 'Copper Cable',
       description: 'product description',
@@ -231,8 +232,7 @@ title: 'Fiber Patch Cord',
           images: ['https://s3-ap-southeast-1.amazonaws.com/cdn-new-annectos/seep_mobile/DIGILINK++QUICK+PUNCH+DOWN+TOOL.jpg','img/Copper- Patch Panel.jpg','img/Fiber- Patch Cord.jpg','img/Copper- Patch Cord.jpg'],
           id: 6
       },
-
-      $scope.products = {
+{
           title: 'Adaptor',
           description: 'product description',
           quantity: 25,
@@ -296,20 +296,21 @@ title: 'Fiber Patch Cord',
 
       ];
 
-        if (!$scope.products.length) {
-            for (var i = 0; i < 25; i++) {
-                var ind = Math.floor(Math.random() * 4);
-
-                var prod         = {};
-                prod.id          = i+1;
-                prod.title       = 'Polaroid Camera';
-                prod.images      = images[ind];
-                prod.description = 'A retro camera';
-                prod.quantity    = ind+1;
-                prod.price       = prices[ind];
-                Products.galleryProducts.push(prod);
-            }
-        }
+//        if (!$scope.products.length) {
+//            for (var i = 0; i < 25; i++) {
+//                var ind = Math.floor(Math.random() * 4);
+//
+//                var prod         = {};
+//                prod.id          = i+1;
+//                prod.title       = 'Polaroid Camera';
+//                prod.images      = images[ind];
+//                prod.description = 'A retro camera';
+//                prod.quantity    = ind+1;
+//                prod.price       = prices[ind];
+//                Products.galleryProducts.push(prod);
+//                console.log( Products.galleryProducts);
+//            }
+//        }
         }, 2000);
 })
 
@@ -346,7 +347,7 @@ title: 'Fiber Patch Cord',
                 deferred.resolve(data);
             }).error(function (data) {
                 deferred.reject("An error occured while validating User");
-            })
+            });
             return deferred.promise;
         };
 
