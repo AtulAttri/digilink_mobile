@@ -94,6 +94,7 @@ angular.module('starter.controllers', [])
 
             $scope.loading = $ionicLoading.show({
                 content: '<i class="icon ion-loading-c"></i>',
+                template: '<ion-spinner class="spinner-energized"> Loading...</ion-spinner>',
                 animation: 'fade-in',
                 showBackdrop: false,
                 maxWidth: 50,
@@ -146,6 +147,7 @@ angular.module('starter.controllers', [])
     .controller("ProductsListCtrl", function($scope, ProductList,$ionicLoading,$timeout) {
         $scope.loading = $ionicLoading.show({
             content: '<i class="icon ion-loading-c"></i>',
+            template: '<ion-spinner class="spinner-energized"> Loading...</ion-spinner>',
             animation: 'fade-in',
             showBackdrop: false,
             maxWidth: 50,
@@ -161,6 +163,7 @@ angular.module('starter.controllers', [])
 .controller('GalleryCtrl', function($scope, Products,$ionicLoading,$timeout,ProductList) {
         $scope.loading = $ionicLoading.show({
             content: '<i class="icon ion-loading-c"></i>',
+            template: '<ion-spinner class="spinner-energized"> Loading...</ion-spinner>',
             animation: 'fade-in',
             showBackdrop: false,
             maxWidth: 50,
