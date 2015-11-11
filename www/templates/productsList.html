@@ -1,23 +1,23 @@
 <ion-view  view-title="Digilink Products">
   <ion-content>
-    <ion-list>
-      <!--<ion-prod ng-repeat="prod in Products" href="#/app/playlists/{{playlist.id}}">-->
-          <!--<div style="margin-left: 60px">-->
-              <!--<div>-->
+    <!--<ion-list>-->
+      <!--&lt;!&ndash;<ion-prod ng-repeat="prod in Products" href="#/app/playlists/{{playlist.id}}">&ndash;&gt;-->
+          <!--&lt;!&ndash;<div style="margin-left: 60px">&ndash;&gt;-->
+              <!--&lt;!&ndash;<div>&ndash;&gt;-->
 
-          <!--<img src="{{prod.ImagePath}}" />-->
-                  <!--</div>-->
+          <!--&lt;!&ndash;<img src="{{prod.ImagePath}}" />&ndash;&gt;-->
+                  <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-            <!--<div>-->
-          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Category: </b>{{prod.Category}}</h5>-->
-          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Description : </b>{{prod.Description}}</h5>-->
-          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif"> prod : </b> {{prod.prod}}</h5>-->
-                <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif"> </b> {{prod.prod}}</h5>-->
-          <!--<h5><b style="font-family:'Trebuchet MS', Sans-Serif">prod Code :</b>{{prod.ProductCode}} </h5>-->
-            <!--</div>-->
+            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Category: </b>{{prod.Category}}</h5>&ndash;&gt;-->
+          <!--&lt;!&ndash;<h5><b style="font-family:'Trebuchet MS', Sans-Serif">Description : </b>{{prod.Description}}</h5>&ndash;&gt;-->
+          <!--&lt;!&ndash;<h5><b style="font-family:'Trebuchet MS', Sans-Serif"> prod : </b> {{prod.prod}}</h5>&ndash;&gt;-->
+                <!--&lt;!&ndash;<h5><b style="font-family:'Trebuchet MS', Sans-Serif"> </b> {{prod.prod}}</h5>&ndash;&gt;-->
+          <!--&lt;!&ndash;<h5><b style="font-family:'Trebuchet MS', Sans-Serif">prod Code :</b>{{prod.ProductCode}} </h5>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
 
-          <!--</div>-->
-      <!--</ion-prod>-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+      <!--&lt;!&ndash;</ion-prod>&ndash;&gt;-->
         <div class="list" collection-repeat="prod in ProductList | filter:filter">
             <table   style="width: 100% ; border-bottom: 1px solid #666666;">
                 <tr  style="display: inline-block ; border-bottom: 1px solid #666666;width: 100% " >
@@ -40,6 +40,21 @@
                 </tr>
             </table>
         </div>
-    </ion-list>
+    <!--</ion-list>-->
+
+      <!--<div class='ion-gallery-content'>-->
+          <!--<div class='card gallery-card' ng-repeat='prod in ProductList track by $index' ui-sref="app.gallery">-->
+              <!--<div class='item gallery-item'>-->
+                  <!--<div class='gallery-image-div'>-->
+                      <!--<img ng-src='{{prod.ImagePath}}' class='gallery-product-image'>-->
+                  <!--</div>-->
+                  <!--<h3 class='gallery-product-title'>{{prod.ProductCode}}</h3>-->
+                  <!--<h3 >{{prod.Category}}</h3>-->
+                  <!--<!--<div class='gallery-product-add' ng-click='addToCart(prod)'>-->
+                      <!--<!--<h3 class='gallery-product-add-title' cart-add>{{addText}}</h3>-->
+                  <!--<!--</div>-->
+              <!--</div>-->
+          <!--</div>-->
+      <!--</div>-->
   </ion-content>
 </ion-view>

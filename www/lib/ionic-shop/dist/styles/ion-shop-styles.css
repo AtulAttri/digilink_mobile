@@ -39,6 +39,8 @@ body {
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
   box-sizing: border-box; /* IE 8 */
   float: left;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
 }
 
 .gallery-item {
@@ -54,6 +56,7 @@ body {
 .gallery-image-div {
   height: 120px;
   line-height: 120px;
+    margin-top: -25px;
 }
 
 .gallery-product-image {

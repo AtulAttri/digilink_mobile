@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http, $q,$state,contactusService,$ionicLoading,$stateParams,Products,$ionicHistory, $window) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$ionicPopup,$http, $q,$state,contactusService,$ionicLoading,$stateParams,Products,$ionicHistory, $window,$rootScope) {
 
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
@@ -8,6 +8,7 @@ angular.module('starter.controllers', [])
   // listen for the $ionicView.enter event:
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+       $rootScope.cartProducts_qty= Products.cartProducts.length;
         $scope.loginData = {"email_id": "", "password": "", "logindate": new Date(), "company": "digilink" };
         $scope.enquire=[];
         $scope.enquire = {"name": "", "mobile_no": "", "create_ts": new Date(), "email": "", "enquire_from": "digilink","created_by": "","product_code":"","additional_remarks":"Enquiry From Digilink Mobile APP"};
@@ -38,7 +39,7 @@ angular.module('starter.controllers', [])
                 template: 'Thank You! Your Enquiry has been sent. Our team will get in touch with you soon'
             });
             alertPopup.then(function(res) {
-                console.log('Your Enquiry has been sent');
+              //  console.log('Your Enquiry has been sent');
                $window.location.reload();
                // $rootScope.$destroy.prototype();
 
@@ -103,21 +104,15 @@ angular.module('starter.controllers', [])
 
             $timeout(function() {
                 $scope.after_enquiry_msg();
-          //  Products.destroy.valueOf();
-
                 $ionicHistory.clearCache();
                 $ionicHistory.clearHistory();
                 $ionicHistory.nextViewOptions({
                     disableAnimate: true,
                     disableBack: true
                 });
-             //   Products.cartProducts= null;
-
-              // CartCtrl.cartProducts=null;
                 $state.go('app.landing');
-
                 $ionicLoading.hide();
-              //  $window.location.reload();
+
             }, 1000);
 
 //            contactusService.insertenquireinfo($http, $q, $scope.enquire ,$ionicLoading).then(function (data) {
@@ -161,12 +156,13 @@ angular.module('starter.controllers', [])
 
         })
 .controller('GalleryCtrl', function($scope, Products,$ionicLoading,$timeout,ProductList) {
+
         $scope.loading = $ionicLoading.show({
-            content: '<i class="icon ion-loading-c"></i>',
+            content: '<i class="icon ion-loading-c">Loading</i>',
             template: '<ion-spinner class="spinner-energized"> Loading...</ion-spinner>',
             animation: 'fade-in',
             showBackdrop: false,
-            maxWidth: 50,
+            maxWidth: 300,
             showDelay: 0
         });
         $timeout(function () {
@@ -315,6 +311,7 @@ title: 'Fiber Patch Cord',
 //            }
 //        }
         }, 2000);
+
 })
 
 .controller('CartCtrl', function($scope, $stateParams, Products,$state) {

@@ -131,6 +131,7 @@
       };
     };
 
+
     return {
       restrict: 'AEC',
       templateUrl: 'gallery-item.html',

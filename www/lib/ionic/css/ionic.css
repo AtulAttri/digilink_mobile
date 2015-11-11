@@ -6585,6 +6585,7 @@ progress {
   .button.button-light {
     border-color: #ddd;
     background-color: #fff;
+    width: 50px;
     color: #444; }
     .button.button-light:hover {
       color: #444;

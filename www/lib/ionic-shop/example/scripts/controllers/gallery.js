@@ -12,7 +12,7 @@ app.controller('GalleryController',[
   ['images/leica.jpeg','images/canon.jpg','images/nikon.jpg','images/polaroid.jpg'],
   ['images/canon.jpg','images/polaroid.jpg','images/nikon.jpg','images/leica.jpeg'],
   ['images/nikon.jpg','images/canon.jpg','images/polaroid.jpg','images/leica.jpeg']];
-  var prices = [150, 800, 800, 2000];
+  var prices = [350, 200, 700, 1000];
 
   if (!$scope.products.length) {
     for (var i = 0; i < 25; i++) {
